@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:poralekha/screens/gettingStarted/getting_started.dart';
+import 'package:poralekha/theme/myTheme.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key});
 
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: MyTheme.WhiteColor,
       body: Center(
         child: AnimatedOpacity(
           duration: const Duration(seconds: 1),
@@ -43,10 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.network(
-                'https://i.ibb.co/9TtY8MN/poralekhasplash.png',
-                width: 120,
-              ),
+              Image.asset("assets/images/poralekha-splash.png", width: 120,),
               const SizedBox(
                 height: 20,
               ),

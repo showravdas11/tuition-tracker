@@ -22,6 +22,7 @@ class MyTheme {
    // colors
 
    static Color WhiteColor = Color.fromARGB(255, 255, 255, 255);
+   static Color buttonColor = Color(0xFF375FBE);
   //  static Color darkBluishColor = Color(0xff403b58);
    static Color lightBluishColor = const Color.fromRGBO(99, 102, 241, 1);
 }
