@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poralekha/common/button.dart';
 import 'package:poralekha/common/text_filed.dart';
 import 'package:poralekha/theme/myTheme.dart';
+import 'package:poralekha/widgets/social_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -26,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 70),
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
             child: Column(
               children: [
                 Center(
@@ -93,7 +94,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 40,
                 ),
-                RoundedButton(title: "Login", width: 250, onTap: () {})
+                RoundedButton(title: "Login", width: 250, onTap: () {}),
+
+                SizedBox(height: 20),
+
+                SocialButton(),
               ],
             ),
           ),
