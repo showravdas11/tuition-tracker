@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:poralekha/screens/gettingStarted/getting_started.dart';
 import 'package:poralekha/theme/myTheme.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key});
 
@@ -44,28 +45,31 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/images/poralekha-splash.png", width: 120,),
+              Image.asset(
+                "assets/images/poralekha-splash.png",
+                width: 120,
+              ),
               const SizedBox(
                 height: 20,
               ),
               Center(
-                child:  SpinKitThreeBounce(
-                size: 30.0,
-                itemBuilder: (BuildContext context, int index) {
-                  List<Color> colors = [
-                    Color.fromARGB(255, 231, 82, 119),
-                    Color.fromARGB(255, 69, 90, 181),
-                    Color.fromARGB(255, 60, 183, 244),
-                  ];
+                child: SpinKitThreeBounce(
+                  size: 30.0,
+                  itemBuilder: (BuildContext context, int index) {
+                    List<Color> colors = [
+                      Color.fromARGB(255, 231, 82, 119),
+                      Color.fromARGB(255, 69, 90, 181),
+                      Color.fromARGB(255, 60, 183, 244),
+                    ];
 
-                  return DecoratedBox(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: colors[index % colors.length],
-                    ),
-                  );
-                },
-              ),
+                    return DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: colors[index % colors.length],
+                      ),
+                    );
+                  },
+                ),
               )
             ],
           ),

@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:poralekha/common/button.dart';
 import 'package:poralekha/common/text_filed.dart';
-import 'package:poralekha/screens/forgetPasswordScreen/forgetPass_screen.dart';
-import 'package:poralekha/screens/signUpScreen/signUp_screen.dart';
+import 'package:poralekha/screens/loginScreen/login_screen.dart';
 import 'package:poralekha/theme/myTheme.dart';
 import 'package:poralekha/widgets/social_button.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
-  // final _formKey = GlobalKey<FormState>();
-  bool isChecked = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Center(
                   child: Text(
-                    "Login",
+                    "Sign Up",
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
@@ -47,6 +43,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 30,
                 ),
+                //Name Field
+                TextFormFiledCommon(
+                  controller: nameController,
+                  text: "Name",
+                  obscure: false,
+                  suffixIcon: Icon(Icons.person),
+                  textInputType: TextInputType.emailAddress,
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                //Email Field
                 TextFormFiledCommon(
                   controller: emailController,
                   text: "Email",
@@ -57,6 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 30,
                 ),
+                //Password Field
                 TextFormFiledCommon(
                   controller: passwordController,
                   text: "Password",
@@ -65,59 +74,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   textInputType: TextInputType.text,
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 30,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Checkbox(
-                          checkColor: Color(0xFFFFFFFF),
-                          activeColor: Color(0xFF375FBE),
-                          value: isChecked,
-                          onChanged: (value) {
-                            setState(() {
-                              isChecked = value!;
-                            });
-                          },
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
-                          visualDensity:
-                              VisualDensity(horizontal: -4.0, vertical: -4.0),
-                        ),
-                        Text(
-                          "Remember me",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF375FBE)),
-                        ),
-                      ],
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ForgetPasswordScreen(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        "Forget Password ?",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFF375FBE)),
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                RoundedButton(title: "Login", width: 250, onTap: () {}),
+                RoundedButton(title: "Sign Up", width: 250, onTap: () {}),
                 SizedBox(height: 20),
-                SocialButton(text: "-or sign in with-"),
+                SocialButton(text: "-or sign up with-"),
                 SizedBox(
                   height: 20,
                 ),
@@ -125,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don't have an account?",
+                      " have an account?",
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 18,
@@ -136,12 +97,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignUpScreen(),
+                              builder: (context) => LoginScreen(),
                             ),
                           );
                         },
                         child: Text(
-                          "Sign Up",
+                          "Sign In",
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 18,
