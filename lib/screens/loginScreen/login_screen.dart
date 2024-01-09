@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poralekha/common/button.dart';
 import 'package:poralekha/common/text_filed.dart';
 import 'package:poralekha/screens/forgetPasswordScreen/forgetPass_screen.dart';
+import 'package:poralekha/screens/homeScreen/home_screen.dart';
 import 'package:poralekha/screens/signUpScreen/signUp_screen.dart';
 import 'package:poralekha/theme/myTheme.dart';
 import 'package:poralekha/widgets/social_button.dart';
@@ -115,7 +116,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 40,
                 ),
-                RoundedButton(title: "Login", width: 250, onTap: () {}),
+                RoundedButton(
+                    title: "Login",
+                    width: 250,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(),
+                        ),
+                      );
+                    }),
                 SizedBox(height: 20),
                 SocialButton(text: "-or sign in with-"),
                 SizedBox(
